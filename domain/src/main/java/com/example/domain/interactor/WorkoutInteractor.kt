@@ -1,5 +1,6 @@
 package com.example.domain.interactor
 
+import com.example.common.coroutines.ICoroutineDispatcherProvider
 import com.example.domain.domainmodel.Result
 import com.example.domain.domainmodel.Workout
 import com.example.domain.repository.IWorkoutRepository
@@ -9,7 +10,8 @@ import java.lang.Exception
  * Created by Festus Kiambi on 11/23/18.
  */
 
-class WorkoutInteractor(workoutRepository: IWorkoutRepository) {
+class WorkoutInteractor(val workoutRepository: IWorkoutRepository,
+                       val coroutineContextProvider: ICoroutineDispatcherProvider) {
 
     suspend fun getWorkout(creationDate: String): Result<Workout, Exception> {
 
