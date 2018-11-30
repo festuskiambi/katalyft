@@ -12,18 +12,22 @@ import java.lang.Exception
 class ExerciseTemplateInteractor(ExerciseTemplateRepository: IExerciseTemplateRepository) {
 
     suspend fun getExerciseTemplate(name: String): Result<ExerciseTemplate, Exception> {
+        return TODO()
 
     }
 
     suspend fun updateExerciseTemplate(template: ExerciseTemplate): Result<ExerciseTemplate, Exception> {
+        return TODO()
 
     }
 
     suspend fun deleteExerciseTemplate(id: String): Result<Boolean, Exception> {
+        return TODO()
 
     }
 
     suspend fun getExerciseTemplateByFilters(filters: List<String>): Result<ExerciseTemplate, Exception> {
+        return TODO()
 
     }
 

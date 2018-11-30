@@ -13,18 +13,22 @@ import java.lang.Exception
 class WorkoutTemplateInteractor(WorkoutTemplateRepository: IWorkoutTemplateRepository) {
 
     suspend fun getWorkoutTemplate(name: String): Result<WorkoutTemplate, Exception> {
+        return TODO()
 
     }
 
     suspend fun updateWorkoutTemplate(template: WorkoutTemplate): Result<WorkoutTemplate, Exception> {
+        return TODO()
 
     }
 
     suspend fun deleteWorkoutTemplate(id: String): Result<Boolean, Exception> {
+        return TODO()
 
     }
 
     suspend fun getWorkoutTemplateByFilters(filters: List<String>): Result<WorkoutTemplate, Exception> {
+        return TODO()
 
     }
 

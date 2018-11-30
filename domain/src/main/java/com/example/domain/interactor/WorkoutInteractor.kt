@@ -10,26 +10,29 @@ import java.lang.Exception
  * Created by Festus Kiambi on 11/23/18.
  */
 
-class WorkoutInteractor(val workoutRepository: IWorkoutRepository,
-                       val coroutineContextProvider: ICoroutineDispatcherProvider) {
+class WorkoutInteractor(val workoutRepository: IWorkoutRepository) {
 
-    suspend fun getWorkout(creationDate: String): Result<Workout, Exception> {
+    suspend fun getWorkout(creationDate: String): Result<Exception, Workout> {
+        return workoutRepository.getWorkoutById(creationDate)
+    }
+
+    suspend fun updateWorkout(workout: Workout): Result< Exception,Workout> {
+        return workoutRepository.updateWorkout(workout)
 
     }
 
-    suspend fun updateWorkout(workout: Workout): Result<Workout, Exception> {
+    suspend fun deleteWorkout(creationDate: String): Result<Exception,Boolean> {
+        return workoutRepository.deleteWorkout(creationDate)
 
     }
 
-    suspend fun deleteWorkout(creationDate: String): Result<Boolean, Exception> {
+    suspend fun getWorkoutByDay(dateByDay: String): Result<Exception,Workout> {
+        return workoutRepository.getWorkoutByDay(dateByDay)
 
     }
 
-    suspend fun getWorkoutByDay(dateByDay: String): Result<Workout, Exception> {
-
-    }
-
-    suspend fun getWorkoutByMonth(dateByMonth: String): Result<Workout, Exception> {
+    suspend fun getWorkoutByMonth(dateByMonth: String): Result<Exception,Workout > {
+        return workoutRepository.getWorkoutByMonth(dateByMonth)
 
     }
 
